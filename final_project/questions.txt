@@ -1,0 +1,13 @@
+Decision Process:
+We can see there are almost hundred thousands of nodes created in the first months after the forum is launched. It is a large value in terms of both volume and velocity and thus it could be a good idea to use MapReduce/Hadoop the data. 
+
+When we want to know about user behaviour, we might need to find about statistics such as frequency of users creating or replying a topic, the number of appearance of each tag in their posts etc. Although it might fit for a traditional relation database. MapReduce/Hadoop may perform better and in some cases provide better flexibility in out solution. For example, we might want to know the number of time a tag being used. While the 'tagnames' column is stored as a string  of tags separated with spaces, we need extra steps to split the string and this extra processing can be done in mapper. We can thus transform the original source of data into a more useful format.
+
+
+Search Functionality:
+Use combiner to combine the output of mapper by "word" before sending to reducer.
+
+
+Other Questions:
+- most popular node
+- most active author
