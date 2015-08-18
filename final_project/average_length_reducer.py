@@ -1,6 +1,7 @@
 #!/usr/bin/python
  
 import sys
+from decimal import Decimal
 
 currentNode = None
 questionLength = 0
@@ -13,7 +14,7 @@ for line in sys.stdin:
  
  
   if thisNode != currentNode and currentNode != None:
-    print "{0}\t{1}\t{2}".format(currentNode, questionLength, 0 if answerCount == 0 else totalAnsLength / answerCount)
+    print "{0}\t{1}\t{2}".format(currentNode, questionLength, 0 if answerCount == 0 else round(Decimal(totalAnsLength) / answerCount, 2))
     questionLength = 0
     totalAnsLength = 0
     answerCount = 0  
@@ -26,7 +27,7 @@ for line in sys.stdin:
 
   currentNode = thisNode
 
-print "{0}\t{1}\t{2}".format(currentNode, questionLength, 0 if answerCount == 0 else totalAnsLength / answerCount)
+print "{0}\t{1}\t{2}".format(currentNode, questionLength, 0 if answerCount == 0 else round(Decimal(totalAnsLength) / answerCount, 2))
 
 
 
