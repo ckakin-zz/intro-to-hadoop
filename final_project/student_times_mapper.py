@@ -12,4 +12,4 @@ for line in reader:
   if authorId.isdigit(): 
     addedAt = line[8][:-3]
     addedAtDate = datetime.strptime(addedAt, "%Y-%m-%d %H:%M:%S.%f") 
-    print "{0}\t{1}".format(authorId, addedAtDate.hour)
+    print "{0}_{1}\t{1}".format(authorId, addedAtDate.hour)

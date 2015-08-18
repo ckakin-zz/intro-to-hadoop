@@ -16,6 +16,7 @@ counter = 0
 for line in sys.stdin:
 
   thisId, thisHr =  line.strip().split("\t")
+  thisId = thisId.split("_")[0]
   
   if isLogOn:
     print "Processing line {0}:\tid {1}\thr {2}".format(counter, thisId, thisHr)
